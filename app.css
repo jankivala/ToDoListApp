@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+    margin: 5rem 0 3rem;
+}
+
+.task {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.task input {
+    height: 50px;
+    width: 30%;
+    outline: none;
+    border: none;
+    background-color: skyblue;
+    font-size: 1em;
+}
+
+.addBtn {
+    height: 50px;
+    width: 50px;
+    outline: none;
+    border: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.item {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid black;
+}
+
+.inputItem {
+    background: none;
+    outline: none;
+    border: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.deleteBtn {
+    font-size: 1.2rem;
+    background: none;
+    outline: none;
+    color: red;
+    border: none;
+    cursor: pointer;
+}
