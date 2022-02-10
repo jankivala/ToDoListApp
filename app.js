@@ -1,39 +1,38 @@
-const addBtn = document.querySelector('.addBtn');
+const addBtnHandler = document.querySelector('.addBtn');
+const container = document.querySelector('.container');
 const input = document.getElementById('input-text');
-const container = document.querySelector('.container'); 
+const ul = document.querySelector('.list');
 
 function toDo () {
-        const task = input.value;
+    const list = input.value;
 
-        if (!task) {
-            alert('Please enter a task');
-            return;
-        }
+    if (!list) {
+        alert('Please enter something');
+        return;
+    }
 
-        const itemElement = document.createElement('div');
-        itemElement.classList.add('item');
-        console.log(itemElement);
+    const listElement = document.createElement('li');
+    listElement.className = 'listitem';
+    listElement.innerHTML = list;
 
-        const inputValue = document.createElement('input');
-        inputValue.disabled = true;
-        inputValue.classList.add('inputItem');
-        inputValue.type = 'text';
-        inputValue.value = task;
+    console.log(listElement);
+    ul.appendChild(listElement);
 
-        container.appendChild(itemElement);
-        itemElement.appendChild(inputValue);
+    ul.onclick = function () {
+        ul.className.remove('listitem');
+    }
 
-        const deleteBtn = document.createElement('button');
-        deleteBtn.innerHTML = 'DELETE';
-        deleteBtn.classList.add('deleteBtn');
+    const dltBtn = document.createElement('button');
+    dltBtn.className = 'delete';
+    dltBtn.innerHTML = 'DELETE';
 
-        itemElement.appendChild(deleteBtn);
+    listElement.appendChild(dltBtn);
 
-        deleteBtn.addEventListener('click', () => {
-            container.removeChild(itemElement);
-        });
+    dltBtn.addEventListener('click', () => {
+        ul.removeChild(listElement);
+    })
 
-        input.value = '';
+    input.value = '';
 }
 
-addBtn.addEventListener('click', toDo);
+addBtnHandler.addEventListener('click', toDo);
